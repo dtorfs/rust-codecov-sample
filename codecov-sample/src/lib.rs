@@ -7,7 +7,7 @@ pub fn uncovered(i: u32) -> u32  {
 }
 
 pub fn another_uncovered(i: u32) -> u32  {
-    i * 4 
+    i * 5 
 }
 
 
