@@ -21,5 +21,13 @@ mod tests {
     fn test_covered() {
         assert_eq!(covered(1), 2);
     }
+    #[test]
+    fn test_uncovered() {
+        assert_eq!(uncovered(1), 3);
+    }
+    #[test]
+    fn test_another_uncovered() {
+        assert_eq!(another_uncovered(1), 5);
+    }
 
 }
