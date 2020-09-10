@@ -19,10 +19,16 @@ jobs:
 
       - name:                   Generate code coverage
         run: |
-          cargo tarpaulin --verbose --all-features --workspace --timeout 120 --out Xml
-
-      - name:                   Upload to codecov.io
-        uses:                   codecov/codecov-action@v1
+          cargo tarpaulin --verbose --all-features --workspace --timeout 120 --out Html
+          
+      
+      - uses: actions/upload-artifact@v2
         with:
-          # token:                ${{secrets.CODECOV_TOKEN}} # not required for public repos
-          fail_ci_if_error:     true
+          name: coverage 
+          path: tarpaulin-report.html
+        
+#      - name:                   Upload to codecov.io
+#        uses:                   codecov/codecov-action@v1
+#        with:
+#          # token:                ${{secrets.CODECOV_TOKEN}} # not required for public repos
+#          fail_ci_if_error:     true
